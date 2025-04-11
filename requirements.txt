@@ -1,0 +1,13 @@
+setuptools
+wheel
+miditok 
+pretty_midi 
+pandas 
+numpy 
+faiss-cpu 
+sentence-transformers 
+torch 
+tqdm 
+matplotlib 
+streamlit
+pygame
