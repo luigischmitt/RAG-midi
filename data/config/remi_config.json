@@ -1,0 +1,11 @@
+{
+  "beat_res": {
+    "0": 8,
+    "1": 8
+  },
+  "nb_velocities": 32,
+  "use_chords": true,
+  "use_rests": true,
+  "use_sustain_pedals": true,
+  "use_programs": true
+}
