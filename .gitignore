@@ -115,8 +115,14 @@ cython_debug/
 # MacOS
 .DS_Store
 
-# Data
-data/
+# Excluir dados gerados
+data/embeddings/
+data/tokenized/
+data/commu_midi/
+data/midi_descriptions.csv
+
+# Incluir apenas arquivos CSV importantes
+!data/commu_meta.csv
 
 # Embeddings
 embeddings/
