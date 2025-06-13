@@ -12,10 +12,10 @@ import threading
 from pathlib import Path
 
 def run_backend():
-    """Executa apenas o backend Streamlit"""
+    """Executa apenas o backend FastAPI"""
     print("🚀 Iniciando backend RAG-MIDI...")
     os.chdir("backend")
-    subprocess.run([sys.executable, "run_rag_midi.py", "--run"])
+    subprocess.run(["uvicorn", "main:app", "--reload"])
 
 def run_frontend():
     """Executa apenas o frontend Next.js"""
@@ -29,7 +29,7 @@ def run_fullstack():
     
     def run_backend_thread():
         os.chdir("backend")
-        subprocess.run([sys.executable, "run_rag_midi.py", "--run"])
+        subprocess.run(["uvicorn", "main:app", "--reload"])
     
     def run_frontend_thread():
         os.chdir("frontend") 
@@ -94,7 +94,7 @@ def main():
         print("Use --help para ver opções disponíveis")
         print("\nComandos principais:")
         print("  --setup      Configurar projeto inicial")
-        print("  --backend    Executar backend Streamlit")
+        print("  --backend    Executar backend FastAPI")
         print("  --frontend   Executar frontend Next.js")
         print("  --fullstack  Executar stack completo")
         return

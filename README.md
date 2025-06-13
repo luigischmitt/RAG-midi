@@ -15,6 +15,7 @@ RAG-midi/
 │   │   ├── config.py              # Configurações
 │   │   └── streamlit_app.py       # Interface Streamlit
 │   ├── requirements.txt           # Dependências Python
+│   ├── main.py                    # API FastAPI
 │   └── run_rag_midi.py           # Script principal
 ├── frontend/                # Interface Next.js
 │   ├── src/                # Código fonte React/Next.js
@@ -35,7 +36,7 @@ RAG-midi/
 python run.py --setup
 ```
 
-### 2. Executar apenas o Backend (Streamlit)
+### 2. Executar apenas o Backend (FastAPI)
 ```bash
 python run.py --backend
 ```
@@ -69,10 +70,11 @@ python run.py --build-index
 
 ## 🌐 APIs e Endpoints
 
-### Backend (Streamlit) - Porto 8501
-- Interface web completa
-- API de busca semântica
+### Backend (FastAPI) - Porto 8000
+- API REST completa
+- Endpoints de busca semântica
 - Download de arquivos MIDI
+- Documentação automática em `/docs`
 
 ### Frontend (Next.js) - Porto 3000
 - Interface moderna React
