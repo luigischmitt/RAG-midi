@@ -2,6 +2,8 @@
 
 Sistema de busca semântica para arquivos MIDI usando Retrieval-Augmented Generation (RAG).
 
+![RAG-MIDI Screenshot](public/image.png)
+
 ## 📁 Estrutura do Projeto
 
 ```
