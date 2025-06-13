@@ -1,47 +1,103 @@
-# RAG-midi
+# 🎵 RAG-MIDI: Search & Discover
 
-RAG-midi is a music recommendation and analysis system that leverages MIDI tokenization and similarity search to assist in musical composition and exploration.
+Sistema de busca semântica para arquivos MIDI usando Retrieval-Augmented Generation (RAG).
 
-## Features
+## 📁 Estrutura do Projeto
 
-- **MIDI Tokenization**: Convert MIDI files into token sequences for analysis.
-- **Similarity Search**: Find similar musical pieces based on text queries.
-- **Streamlit Interface**: Interactive web application for exploring and analyzing music.
+```
+RAG-midi/
+├── backend/                 # Sistema RAG em Python
+│   ├── src/
+│   │   ├── rag_engine.py           # Motor de busca RAG
+│   │   ├── metadata_processor.py   # Processamento de metadados
+│   │   ├── config.py              # Configurações
+│   │   └── streamlit_app.py       # Interface Streamlit
+│   ├── requirements.txt           # Dependências Python
+│   └── run_rag_midi.py           # Script principal
+├── frontend/                # Interface Next.js
+│   ├── src/                # Código fonte React/Next.js
+│   └── package.json
+├── data/                  # Dados e índices
+│   ├── index/            # Índices FAISS
+│   ├── midi/             # Arquivos MIDI
+│   └── metadata/         # Metadados dos datasets
+├── docs/                 # Documentação
+├── scripts/              # Scripts utilitários
+└── run.py               # Gerenciador do projeto
+```
 
-## Installation
+## 🚀 Início Rápido
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/yourusername/RAG-midi.git
-   cd RAG-midi
-   ```
+### 1. Configuração Inicial
+```bash
+python run.py --setup
+```
 
-2. **Set Up the Virtual Environment**:
-   ```bash
-   python3.9 -m venv .venv
-   source .venv/bin/activate
-   ```
+### 2. Executar apenas o Backend (Streamlit)
+```bash
+python run.py --backend
+```
 
-3. **Install Dependencies**:
-   ```bash
-   pip install --upgrade pip setuptools
-   pip install -r requirements.txt
-   ```
+### 3. Executar apenas o Frontend (Next.js)
+```bash
+python run.py --frontend
+```
 
-## Usage
+### 4. Executar Stack Completo
+```bash
+python run.py --fullstack
+```
 
-1. **Run the Streamlit App**:
-   ```bash
-   streamlit run src/app.py
-   ```
+## 📊 Datasets Suportados
 
-2. **Access the App**:
-   Open your browser and go to `http://localhost:8501` to interact with the application.
+- **ComMU**: 11,144 arquivos MIDI
+- **LMD Full/MidiCaps**: 168,385 arquivos MIDI  
+- **E-GMD**: 45,537 arquivos MIDI
+- **Total**: 225,066+ arquivos indexados
 
-## Contributing
+## 🔧 Comandos Úteis
 
-Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
+```bash
+# Testar sistema RAG
+python run.py --test
 
-## License
+# Reconstruir índice FAISS
+python run.py --build-index
+```
 
-This project is licensed under the MIT License.
+## 🌐 APIs e Endpoints
+
+### Backend (Streamlit) - Porto 8501
+- Interface web completa
+- API de busca semântica
+- Download de arquivos MIDI
+
+### Frontend (Next.js) - Porto 3000
+- Interface moderna React
+- Integração com APIs do backend
+- Deploy otimizado para Vercel
+
+## 📈 Performance
+
+- **Tempo de indexação**: ~15 minutos para 225K arquivos
+- **Tempo de busca**: <1 segundo para queries complexas
+- **Tamanho do índice**: ~2.5GB FAISS + metadados
+
+## 🔍 Busca Semântica
+
+Exemplos de queries suportadas:
+- "romantic piano ballad in minor key"
+- "energetic jazz with saxophone"
+- "classical music with strings and piano"
+- "electronic dance music 120 BPM"
+
+## 🎯 Para Moises/Music.ai
+
+Sistema configurado para:
+- URLs de bucket em produção
+- Escalabilidade horizontal
+- Integração com storage em nuvem
+
+## 📝 Licença
+
+MIT License - veja arquivo LICENSE para detalhes.
